@@ -62,7 +62,35 @@
             margin: 0;
             padding: 0;
             font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
+            overflow-x: hidden;
+            background: #f8f9fa;
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,0,0,0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0,0,0,0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0,0,0,0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
         .navbar {
             background-color: #333;
