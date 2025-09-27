@@ -1,0 +1,636 @@
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 5px;
+    }
+
+    .navbar a {
+        flex: 1;
+        text-align: center;
+        min-width: 0;
+        padding: 12px 4px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 2px;
+    }
+    
+    .navbar a {
+        padding: 10px 2px;
+        font-size: 12px;
+    }
+}
+
+ 
+    @keyframes slideIn {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
+    }
+
+    
+    #portfolio {
+        animation: slideIn 1s ease-in-out;
+    }
+        
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    
+    #contact {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,0.01) 2px,
+                    rgba(0,0,0,0.01) 4px
+                );
+            pointer-events: none;
+            z-index: -1;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border-bottom: 2px solid #444;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            position: relative;
+        }
+        .navbar a:hover {
+            background: linear-gradient(135deg, #4a4a4a 0%, #333 100%);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .navbar a:hover::after {
+            width: 80%;
+        }
+        #home {
+            text-align: center;
+            color: #333;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+        #name {
+            margin-bottom: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+        #occupation {
+            color: #666;
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        
+        #name::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #333;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        
+        .page-number {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 3px;
+            animation: pageFloat 3s ease-in-out infinite;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 1px solid #555;
+            display: none;
+        }
+        
+        .page-number.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .page-number {
+                bottom: 15px;
+                right: 15px;
+                padding: 6px 10px;
+                font-size: 10px;
+            }
+            
+            #home {
+                padding: 30px;
+                width: 95%;
+            }
+            
+            #name {
+                font-size: 32px;
+                word-spacing: 2px;
+            }
+            
+            #occupation {
+                font-size: 20px;
+                word-spacing: 1px;
+            }
+            
+            .project {
+                margin: 20px 0;
+                padding: 20px;
+            }
+            
+            .project p {
+                word-spacing: 1px;
+                line-height: 1.8;
+            }
+            
+            .portfolio-image {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-number {
+                bottom: 10px;
+                right: 10px;
+                padding: 4px 8px;
+                font-size: 9px;
+            }
+            
+            #home {
+                padding: 25px;
+                width: 98%;
+                max-width: none;
+            }
+            
+            #name {
+                font-size: 28px;
+                word-spacing: 2px;
+            }
+            
+            #occupation {
+                font-size: 18px;
+                word-spacing: 1px;
+            }
+            
+            .project {
+                margin: 15px 0;
+                padding: 15px;
+            }
+            
+            .project h3 {
+                font-size: 18px;
+                word-spacing: 1px;
+            }
+            
+            .project p {
+                font-size: 14px;
+                word-spacing: 1px;
+                line-height: 1.7;
+            }
+            
+            .navbar a {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+            
+            .portfolio-image {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin: 10px 0;
+            }
+            
+            .portfolio-video {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin: 10px 0;
+            }
+        }
+
+        
+        #skip-animation:hover {
+            background: #333;
+            color: #f8f9fa;
+        }
+
+        @keyframes pageFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-link {
+            font-size: 28px;
+            color: #333;
+            text-decoration: none;
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(51, 51, 51, 0.2);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        .social-link:hover {
+            transform: scale(1.1) translateY(-3px);
+            color: #fff;
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        #about-me {
+            display: none;
+            margin-top: 80px;
+            padding: 40px;
+            margin: 80px 20px 20px 20px;
+            animation: documentSlideIn 0.8s ease-out;
+        }
+        #portfolio {
+            display: none;
+            margin-top: 80px;
+            padding: 40px;
+            margin: 80px 20px 20px 20px;
+            animation: documentSlideIn 0.8s ease-out;
+        }
+
+        @keyframes documentSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) rotateX(15deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
+        }
+        
+        .navbar #download-cv {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        .navbar #download-cv a {
+            text-decoration: none;
+        }
+
+        .navbar #download-cv button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px; 
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 0; 
+        }
+
+        .navbar #download-cv button:hover {
+            color: black; 
+        }
+
+        
+        .portfolio-image {
+            width: 200px; 
+            border: 2px solid #333; 
+            margin: 10px; 
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer; 
+        }
+        .portfolio-video {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ddd;
+            margin: 20px;
+            transition: all 0.3s ease;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .portfolio-image:hover {
+            transform: scale(1.1); 
+        }
+
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1;
+            text-align: center;
+            overflow: auto;
+        }
+
+        .lightbox img {
+            margin-top: 10%;
+            max-width: 80%;
+            max-height: 70%;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 4px solid #333;
+            border-radius: 5px;
+            transition: all 0.4s ease;
+            animation: contactSlideIn 0.8s ease-out;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .contact-item::before {
+            content: counter(contact-counter, decimal-leading-zero);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .contact-item i {
+            font-size: 28px;
+            margin-right: 20px;
+            color: #333;
+            min-width: 40px;
+        }
+
+        .contact-item p {
+            font-size: 18px;
+            margin: 0;
+            color: #333;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-section {
+            counter-reset: contact-counter;
+        }
+
+        .contact-item {
+            counter-increment: contact-counter;
+        }
+
+        @keyframes contactSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+.fa-phone:before {
+    content: "\f095"; 
+}
+
+.fa-envelope:before {
+    content: "\f0e0"; 
+}
+
+        .fa-home:before {
+            content: "\f015"; 
+        }
+
+        
+        .project {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 30px 0;
+            padding: 35px;
+            border-left: 4px solid #333;
+            position: relative;
+            transition: all 0.4s ease;
+            animation: reportCardAppear 0.8s ease-out;
+            counter-increment: project-counter;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 51, 51, 0.1);
+        }
+
+        .project::before {
+            content: counter(project-counter, decimal-leading-zero);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid #ddd;
+        }
+
+
+        @keyframes reportCardAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotateY(45deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg);
+            }
+        }
+
+        @keyframes progressBar {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .project h3 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project p {
+            line-height: 1.7;
+            font-size: 15px;
+            color: #333;
+            text-align: justify;
+        }
+
+        .project a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .project a:hover {
+            color: #666;
+        }
+
+        
+        .portfolio {
+            counter-reset: project-counter;
+        }
+
+        
+        .portfolio-image {
+            width: 300px;
+            height: 200px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            margin: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            max-width: 100%;
+            box-sizing: border-box;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background: #f8f9fa;
+        }
+
+        .portfolio-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        
+        #contact {
+            display: none;
+            margin-top: 80px;
+            padding: 40px;
+            margin: 80px 20px 20px 20px;
+            animation: documentSlideIn 0.8s ease-out;
+        }
