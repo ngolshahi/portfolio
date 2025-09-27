@@ -375,50 +375,177 @@
             max-width: 80%;
             max-height: 70%;
         }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
 
-#contact {
-    display: none;
-    text-align: center;
-    color: #333;
-    padding: 20px;
-    margin-top: 20px;
-}
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #333;
+            transition: all 0.3s ease;
+            animation: contactSlideIn 0.6s ease-out;
+        }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
+        .contact-item:hover {
+            background: #e9ecef;
+            transform: translateX(10px);
+        }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
+        .contact-item i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #333;
+        }
 
-.contact-item i {
-    font-size: 24px;
-    margin-right: 10px;
-    color: #333;
-}
+        .contact-item p {
+            font-size: 16px;
+            margin: 0;
+            color: #333;
+            font-weight: bold;
+        }
 
-.contact-item p {
-    font-size: 16px;
-    margin: 0;
-}
+        @keyframes contactSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
 
 .fa-phone:before {
-    content: "\f095";
+    content: "\f095"; 
 }
 
 .fa-envelope:before {
-    content: "\f0e0";
+    content: "\f0e0"; 
 }
 
-.fa-home:before {
-    content: "\f015"; 
-}
+        .fa-home:before {
+            content: "\f015"; 
+        }
+
+        
+        .project {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 30px 0;
+            padding: 30px;
+            border-left: 4px solid #333;
+            position: relative;
+            transition: all 0.4s ease;
+            animation: reportCardAppear 0.8s ease-out;
+            counter-increment: project-counter;
+            border-radius: 5px;
+        }
+
+        .project::before {
+            content: counter(project-counter, decimal-leading-zero);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid #ddd;
+        }
+
+
+        @keyframes reportCardAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotateY(45deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg);
+            }
+        }
+
+        @keyframes progressBar {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project h3 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project p {
+            line-height: 1.7;
+            font-size: 15px;
+            color: #333;
+            text-align: justify;
+        }
+
+        .project a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid #333;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .project a:hover {
+            color: #666;
+            border-bottom-color: #666;
+        }
+
+        
+        .portfolio {
+            counter-reset: project-counter;
+        }
+
+        
+        .portfolio-image {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            margin: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .portfolio-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        
+        #contact {
+            display: none;
+            margin-top: 80px;
+            padding: 40px;
+            margin: 80px 20px 20px 20px;
+            animation: documentSlideIn 0.8s ease-out;
+        }
 
     </style>
 </head>
