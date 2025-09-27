@@ -16,7 +16,7 @@ function closeLightbox() {
 const nameElement = document.getElementById('name');
 const occupationElement = document.getElementById('occupation');
 let nameText = "Nima Golshahi";
-let occupationText = "Computer Science Student";
+let occupationText = "Software Engineer @ BNY";
 let index = 0;
 
 function typeWriter() {
