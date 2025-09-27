@@ -136,6 +136,133 @@
             color: #888;
             font-size: 20px;
             margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        
+        #name::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #333;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        
+        .page-number {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 3px;
+            animation: pageFloat 3s ease-in-out infinite;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .page-number {
+                bottom: 5px;
+                right: 5px;
+                padding: 3px 8px;
+                font-size: 10px;
+            }
+            
+            #home {
+                padding: 20px;
+                width: 95%;
+            }
+            
+            #name {
+                font-size: 28px;
+            }
+            
+            #occupation {
+                font-size: 18px;
+            }
+            
+            .project {
+                margin: 20px 0;
+                padding: 20px;
+            }
+            
+            .portfolio-image {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-number {
+                bottom: 3px;
+                right: 3px;
+                padding: 2px 6px;
+                font-size: 9px;
+            }
+            
+            #home {
+                padding: 15px;
+                width: 98%;
+                max-width: none;
+            }
+            
+            #name {
+                font-size: 24px;
+            }
+            
+            #occupation {
+                font-size: 16px;
+            }
+            
+            .project {
+                margin: 15px 0;
+                padding: 15px;
+            }
+            
+            .project h3 {
+                font-size: 18px;
+            }
+            
+            .project p {
+                font-size: 14px;
+            }
+            
+            .navbar a {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+            
+            .portfolio-image {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin: 10px 0;
+            }
+            
+            .portfolio-video {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin: 10px 0;
+            }
+        }
+
+        
+        #skip-animation:hover {
+            background: #333;
+            color: #f8f9fa;
+        }
+
+        @keyframes pageFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
         }
         .social-links {
             margin-top: 20px;
