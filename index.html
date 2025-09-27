@@ -6,39 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nima Golshahi - Resume</title>
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https:
     <style>
-/* Add media query for mobile devices */
+
 @media (max-width: 768px) {
     .navbar {
         display: flex;
-        flex-wrap: wrap; /* Allow items to wrap if they don't fit in one line */
-        justify-content: center; /* Center align the items horizontally */
+        flex-wrap: wrap; 
+        justify-content: center; 
     }
 
     .navbar a {
-        flex: 1; /* Allow items to take equal space within the flex container */
+        flex: 1; 
         text-align: center;
     }
 }
 
- /* Add animation keyframes */
+ 
     @keyframes slideIn {
         0% { transform: translateX(-100%); }
         100% { transform: translateX(0); }
     }
 
-    /* Apply the animation to the portfolio section */
+    
     #portfolio {
         animation: slideIn 1s ease-in-out;
     }
-        /* Add animation keyframes */
+        
     @keyframes fadeIn {
         0% { opacity: 0; }
         100% { opacity: 1; }
     }
 
-    /* Apply the animation to the contact section */
+    
     #contact {
         animation: fadeIn 1s ease-in-out;
     }
@@ -112,11 +112,11 @@
             text-align: center;
             color: #333;
             padding: 20px;
-            margin-top: 20px; /* Add margin to the top to avoid being covered by the menu button */
+            margin-top: 20px; 
             overflow: auto;
-            max-height: 70vh; /* Adjust as needed */
+            max-height: 70vh; 
         }
-        /* Update the styling for the "Download CV" button */
+        
         .navbar #download-cv {
             position: absolute;
             top: 50%;
@@ -132,38 +132,38 @@
             background: none;
             border: none;
             color: white;
-            font-size: 16px; /* Adjust the font size to match other links */
+            font-size: 16px; 
             cursor: pointer;
             transition: color 0.2s ease-in-out;
             font-family: 'Courier New', Courier, monospace;
-            padding: 0; /* Remove padding to avoid grey rectangle */
+            padding: 0; 
         }
 
         .navbar #download-cv button:hover {
-            color: black; /* Change the hover color to black */
+            color: black; 
         }
 
-        /* Style for the portfolio images and animations */
+        
         .portfolio-image {
-            width: 200px; /* Adjust the image width as needed */
-            border: 2px solid #333; /* Add border */
-            margin: 10px; /* Add margin to separate images */
+            width: 200px; 
+            border: 2px solid #333; 
+            margin: 10px; 
             transition: transform 0.2s ease-in-out;
-            cursor: pointer; /* Add cursor pointer */
+            cursor: pointer; 
         }
         .portfolio-video {
-            width: 200px; /* Adjust the image width as needed */
-            border: 2px solid #333; /* Add border */
-            margin: 10px; /* Add margin to separate images */
+            width: 200px; 
+            border: 2px solid #333; 
+            margin: 10px; 
             transition: transform 0.2s ease-in-out;
-            cursor: pointer; /* Add cursor pointer */
+            cursor: pointer; 
         }
 
         .portfolio-image:hover {
-            transform: scale(1.1); /* Add a scale effect on hover */
+            transform: scale(1.1); 
         }
 
-        /* Lightbox styles */
+        
         .lightbox {
             display: none;
             position: fixed;
@@ -182,7 +182,7 @@
             max-width: 80%;
             max-height: 70%;
         }
-        /* Add this CSS code to style the contact section */
+
 #contact {
     display: none;
     text-align: center;
@@ -215,17 +215,16 @@
     margin: 0;
 }
 
-/* Add this CSS to style the icons */
 .fa-phone:before {
-    content: "\f095"; /* Unicode for phone icon */
+    content: "\f095";
 }
 
 .fa-envelope:before {
-    content: "\f0e0"; /* Unicode for envelope icon */
+    content: "\f0e0";
 }
 
 .fa-home:before {
-    content: "\f015"; /* Unicode for home icon */
+    content: "\f015"; 
 }
 
     </style>
@@ -241,7 +240,7 @@
         <h1 id="name"></h1>
         <p id="occupation"></p>
         <div class="social-links">
-            <a class="social-link" href="https://github.com/ngolshahi" target="_blank" title="My Github">
+            <a class="social-link" href="https:
                 <i class="fab fa-github"></i>
             </a>
             <a class="social-link" href="resume.pdf" target="_blank"  title="Download my CV">
@@ -259,22 +258,20 @@
             <h3>TetrECS</h3>
             <p>I have developed a Tetris-inspired game using JavaFX that offers both a classic single-player mode and an engaging multiplayer mode. In the multiplayer mode, I implemented real-time functionality, allowing players to create parties, chat, and compete with friends, adding an exciting social dimension to the game. I also designed and coded interactive gameplay elements, ensuring smooth block movement, rotation, and an effective scoring system to keep players engaged. To enhance the overall user experience, I created a user-friendly interface with responsive game controls, making it easy for players to enjoy the game.</p>
         </div>
-        <!-- Add portfolio images here with lightbox functionality -->
-        <img class="portfolio-image" src="image1.png" alt="Image 1" onclick="openLightbox('image1.png', 'Image 1 Description')">
-        <img class="portfolio-image" src="image2.png" alt="Image 2" onclick="openLightbox('image2.png', 'Image 2 Description')">
-        <img class="portfolio-image" src="image3.png" alt="Image 3" onclick="openLightbox('image3.png', 'Image 3 Description')">
-        <!-- Add more images as needed -->
+        <img class="portfolio-image" src="tetrecs.png" alt="TetrECS Initial Page" onclick="openLightbox('tetrecs.png', 'TetrECS initial page')">
+        <img class="portfolio-image" src="tetrecs_game.png" alt="TetrECS Game Page" onclick="openLightbox('tetrecs_game.png', 'TetrECS game page')">
+        <img class="portfolio-image" src="tetrecs_instructions.png" alt="TetrECS Instructions Page" onclick="openLightbox('tetrecs_instructions.png', 'TetrECS instructions page')">
 	<div class="project">
             <h3>Coronavirus Database</h3>
             <p>For my coursework project, I embarked on a comprehensive data analysis and modeling endeavor centered around COVID-19 statistics. This project demanded the transformation of raw data from a CSV file into structured SQL tables, meticulously designed to adhere to the Boyce Codd Normal Form (BCNF) principles for optimal data integrity and efficiency. Additionally, I created a GNUPlot script to plot the cumulative deaths of the top 10 countries with the highest cumulative deaths as part of my extension.</p>
         </div>
-	<img class="portfolio-image" src="image4.png" alt="Image 4" onclick="openLightbox('image4.png', 'Image 4 Description')">
+	<img class="portfolio-image" src="covid_graph.png" alt="Coronavirus Database Graph" onclick="openLightbox('covid_graph.png', 'Coronavirus Database Graph')">
 	<div class="project">
             <h3>eGarden</h3>
             <p>During my Interaction Design coursework, my team and I developed an interactive tool called eGarden to help people optimize their home energy use with advanced energy technologies. We started with a literature review of relevant studies and conducted in-depth user interviews, followed by first-pass coding and thematic analysis to identify key themes and latent insights. We detailed these themes with illustrative quotes and created an affinity diagram to visualize concepts and relationships. This thorough analysis enabled us to articulate a clear problem statement that our tool could address. We then developed a low-fidelity prototype, produced a video explanation, and conducted evaluations with another group, refining our design based on their feedback through thematic analysis. This comprehensive process showcased our ability to translate theoretical research into practical, user-centered solutions.</p>
         </div>
-    <img class="portfolio-image" src="image6.png" alt="Image 6" onclick="openLightbox('image6.png', 'Image 6 Description')">
-	<img class="portfolio-image" src="image7.png" alt="Image 7" onclick="openLightbox('image7.png', 'Image 7 Description')">
+    <img class="portfolio-image" src="egarden_mind.png" alt="eGarden Mind Map" onclick="openLightbox('egarden_mind.png', 'eGarden Mind Map')">
+	<img class="portfolio-image" src="egarden_wireframe.png" alt="eGarden Wireframe" onclick="openLightbox('egarden_wireframe.png', 'eGarden wireframe')">
 
 	<div class="project">
             <h3>Ad Auction Dashboard</h3>
@@ -297,13 +294,13 @@
             <p>During my Programming Language Concepts coursework, my team and I designed and implemented a domain-specific programming language for querying simple Graph Data documents. Using Happy for parsing and Alex for lexing in Haskell, we developed a language inspired by existing query languages, tailored to solve specific problems related to graph data manipulation. Our project involved creating an appropriate syntax and writing an interpreter to handle queries and manipulations. We tackled five example problems by writing programs in our language to solve them, which, along with our interpreter's Haskell sources, comprised our initial submission. For the second submission, we documented our design decisions in a programming language manual and solved five additional unseen problems, demonstrating our language's robustness. This project required creative and clean syntax design, effective error handling, and the ability to meet qualitative and quantitative performance benchmarks, ultimately showcasing our skills in language design and implementation.</p>
         </div>    
 
-    <!-- Lightbox container -->
+    
     <div id="image-lightbox" class="lightbox" onclick="closeLightbox()">
         <img id="lightbox-image" src="" alt="">
     </div>
 </div>    
 
-        <!-- Add this HTML code to your existing contact section -->
+        
 <div id="contact">
     <h2>Contact</h2>
     <div class="contact-info">
@@ -315,16 +312,11 @@
             <i class="fas fa-envelope"></i>
             <p>Email: golshahi@icloud.com</p>
         </div>
-        <div class="contact-item">
-            <i class="fas fa-home"></i>
-            <p>Address: 20 Yalden Gardens, Farnham, Surrey, United Kingdom</p>
-        </div>
     </div>
 </div>
 
 
     <script>
-        // Lightbox functions
         function openLightbox(imageSrc, imageAlt) {
             const lightbox = document.getElementById('image-lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
@@ -339,7 +331,7 @@
             lightbox.style.display = 'none';
         }
 
-        // Typewriter animation for the name and occupation at the same time
+
         const nameElement = document.getElementById('name');
         const occupationElement = document.getElementById('occupation');
         let nameText = "Nima Golshahi";
@@ -359,7 +351,7 @@
             }
         }
 
-        // Typewriter animation for the "About Me" section
+        
         const aboutMeElement = document.getElementById('about-me-content');
         let aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills,learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
         let aboutMeIndex = 0;
@@ -372,7 +364,7 @@
             }
         }
 
-        // Show/hide sections based on navbar clicks
+        
         const homeLink = document.getElementById('home-link');
         const aboutMeLink = document.getElementById('about-me-link');
         const portfolioLink = document.getElementById('portfolio-link');
@@ -388,12 +380,12 @@
             contactSection.style.display = 'none';
             portfolioSection.style.display = 'none';
             homeSection.style.display = 'block';
-            nameText = "Nima Golshahi"; // Reset name text
-            occupationText = "Computer Science Student"; // Reset occupation text
-            index = 0; // Reset typing animation
-            nameElement.innerHTML = ''; // Clear name text
-            occupationElement.innerHTML = ''; // Clear occupation text
-            typeWriter(); // Start name and occupation typing animation again
+            nameText = "Nima Golshahi"; 
+            occupationText = "Computer Science Student"; 
+            index = 0; 
+            nameElement.innerHTML = ''; 
+            occupationElement.innerHTML = ''; 
+            typeWriter(); 
         });
 
         aboutMeLink.addEventListener('click', () => {
@@ -405,7 +397,7 @@
             aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills,learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
             aboutMeIndex = 0;
             aboutMeElement.innerHTML = '';
-            typeWriterAboutMe(); // Trigger typewriter animation
+            typeWriterAboutMe(); 
         });
 
         portfolioLink.addEventListener('click', () => {
@@ -423,9 +415,9 @@
                 contactSection.style.display = 'block';
         });
 
-        // Initial animation for the home section
+        
         window.onload = function () {
-            typeWriter(); // Start name and occupation typing animation
+            typeWriter(); 
             setTimeout(() => {
                 const homeElement = document.getElementById('home');
                 homeElement.style.animation = 'glitch 1s linear infinite';
