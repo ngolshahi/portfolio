@@ -17,8 +17,22 @@
     }
 
     .navbar a {
-        flex: 1; 
+        flex: 1;
         text-align: center;
+        min-width: 0;
+        padding: 12px 4px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 2px;
+    }
+    
+    .navbar a {
+        padding: 10px 2px;
+        font-size: 12px;
     }
 }
 
