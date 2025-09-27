@@ -644,8 +644,9 @@
             <h3>Coronavirus Database</h3>
             <p>For my coursework project, I embarked on a comprehensive data analysis and modeling endeavor centered around COVID-19 statistics. This project demanded the transformation of raw data from a CSV file into structured SQL tables, meticulously designed to adhere to the Boyce Codd Normal Form (BCNF) principles for optimal data integrity and efficiency. Additionally, I created a GNUPlot script to plot the cumulative deaths of the top 10 countries with the highest cumulative deaths as part of my extension.</p>
         </div>
-	<img class="portfolio-image" src="covid_graph.png" alt="Coronavirus Database Graph" onclick="openLightbox('covid_graph.png', 'Coronavirus Database Graph')">
-	<div class="project">
+        <img class="portfolio-image" src="images/covid_graph.png" alt="Coronavirus Database Graph" onclick="openLightbox('covid_graph.png', 'Coronavirus Database Graph')">
+
+        <div class="project">
             <h3>eGarden</h3>
             <p>During my Interaction Design coursework, my team and I developed an interactive tool called eGarden to help people optimize their home energy use with advanced energy technologies. We started with a literature review of relevant studies and conducted in-depth user interviews, followed by first-pass coding and thematic analysis to identify key themes and latent insights. We detailed these themes with illustrative quotes and created an affinity diagram to visualize concepts and relationships. This thorough analysis enabled us to articulate a clear problem statement that our tool could address. We then developed a low-fidelity prototype, produced a video explanation, and conducted evaluations with another group, refining our design based on their feedback through thematic analysis. This comprehensive process showcased our ability to translate theoretical research into practical, user-centered solutions.</p>
         </div>
@@ -737,16 +738,31 @@
 
         
         const aboutMeElement = document.getElementById('about-me-content');
-        let aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills,learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
+        const skipButton = document.getElementById('skip-animation');
+        let aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills, learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
         let aboutMeIndex = 0;
+        let isTyping = false;
 
         function typeWriterAboutMe() {
-            if (aboutMeIndex < aboutMeText.length) {
-                aboutMeElement.innerHTML += aboutMeText.charAt(aboutMeIndex);
+            if (aboutMeIndex < aboutMeText.length && isTyping) {
+                const char = aboutMeText.charAt(aboutMeIndex);
+                aboutMeElement.innerHTML += char;
                 aboutMeIndex++;
-                setTimeout(typeWriterAboutMe, 50);
+                
+                const delay = char === ' ' ? 100 : 50;
+                setTimeout(typeWriterAboutMe, delay);
+            } else if (aboutMeIndex >= aboutMeText.length) {
+                skipButton.style.display = 'none';
             }
         }
+
+        function skipAnimation() {
+            isTyping = false;
+            aboutMeElement.innerHTML = aboutMeText;
+            skipButton.style.display = 'none';
+        }
+
+        skipButton.addEventListener('click', skipAnimation);
 
         
         const homeLink = document.getElementById('home-link');
@@ -765,11 +781,12 @@
             portfolioSection.style.display = 'none';
             homeSection.style.display = 'block';
             nameText = "Nima Golshahi"; 
-            occupationText = "Computer Science Student"; 
+            occupationText = "Software Engineer @ BNY"; 
             index = 0; 
             nameElement.innerHTML = ''; 
             occupationElement.innerHTML = ''; 
             typeWriter(); 
+            document.getElementById('page-number').textContent = 'PAGE 1';
         });
 
         aboutMeLink.addEventListener('click', () => {
@@ -778,10 +795,13 @@
             contactSection.style.display = 'none';
             portfolioSection.style.display = 'none';
             aboutMeSection.style.display = 'block';
-            aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills,learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
+            aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills, learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
             aboutMeIndex = 0;
             aboutMeElement.innerHTML = '';
+            isTyping = true;
+            skipButton.style.display = 'inline-block';
             typeWriterAboutMe(); 
+            document.getElementById('page-number').textContent = 'PAGE 2';
         });
 
         portfolioLink.addEventListener('click', () => {
@@ -790,6 +810,7 @@
             contactSection.style.display = 'none';
             aboutMeSection.style.display = 'none';
             portfolioSection.style.display = 'block';
+            document.getElementById('page-number').textContent = 'PAGE 3';
         });
         contactLink.addEventListener('click', () => {
                 homeSection.style.animation = 'none';
@@ -797,6 +818,7 @@
                 aboutMeSection.style.display = 'none';
                 portfolioSection.style.display = 'none';
                 contactSection.style.display = 'block';
+                document.getElementById('page-number').textContent = 'PAGE 4';
         });
 
         
@@ -812,4 +834,5 @@
     </script>
 </body>
 </html>
+
 
