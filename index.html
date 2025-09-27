@@ -87,20 +87,28 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(0,0,0,0.02) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0,0,0,0.02) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(0,0,0,0.02) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,0.01) 2px,
+                    rgba(0,0,0,0.01) 4px
+                );
             pointer-events: none;
             z-index: -1;
         }
         .navbar {
-            background-color: #333;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
             overflow: hidden;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border-bottom: 2px solid #444;
         }
         .navbar a {
             float: left;
@@ -110,10 +118,29 @@
             padding: 14px 16px;
             text-decoration: none;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            position: relative;
         }
         .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+            background: linear-gradient(135deg, #4a4a4a 0%, #333 100%);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .navbar a:hover::after {
+            width: 80%;
         }
         #home {
             text-align: center;
@@ -128,16 +155,20 @@
             box-sizing: border-box;
         }
         #name {
-            margin-bottom: 10px;
-            font-size: 36px;
+            margin-bottom: 15px;
+            font-size: 42px;
             font-weight: bold;
             color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
         }
         #occupation {
-            color: #888;
-            font-size: 20px;
-            margin-bottom: 20px;
+            color: #666;
+            font-size: 22px;
+            margin-bottom: 30px;
             font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         
@@ -155,42 +186,56 @@
         
         .page-number {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            bottom: 20px;
+            right: 20px;
             background: #333;
             color: white;
-            padding: 5px 10px;
+            padding: 8px 12px;
             font-size: 11px;
             font-weight: bold;
             border-radius: 3px;
             animation: pageFloat 3s ease-in-out infinite;
             z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 1px solid #555;
+            display: none;
+        }
+        
+        .page-number.active {
+            display: block;
         }
 
         @media (max-width: 768px) {
             .page-number {
-                bottom: 5px;
-                right: 5px;
-                padding: 3px 8px;
+                bottom: 15px;
+                right: 15px;
+                padding: 6px 10px;
                 font-size: 10px;
             }
             
             #home {
-                padding: 20px;
+                padding: 30px;
                 width: 95%;
             }
             
             #name {
-                font-size: 28px;
+                font-size: 32px;
+                word-spacing: 2px;
             }
             
             #occupation {
-                font-size: 18px;
+                font-size: 20px;
+                word-spacing: 1px;
             }
             
             .project {
                 margin: 20px 0;
                 padding: 20px;
+            }
+            
+            .project p {
+                word-spacing: 1px;
+                line-height: 1.8;
             }
             
             .portfolio-image {
@@ -202,24 +247,26 @@
 
         @media (max-width: 480px) {
             .page-number {
-                bottom: 3px;
-                right: 3px;
-                padding: 2px 6px;
+                bottom: 10px;
+                right: 10px;
+                padding: 4px 8px;
                 font-size: 9px;
             }
             
             #home {
-                padding: 15px;
+                padding: 25px;
                 width: 98%;
                 max-width: none;
             }
             
             #name {
-                font-size: 24px;
+                font-size: 28px;
+                word-spacing: 2px;
             }
             
             #occupation {
-                font-size: 16px;
+                font-size: 18px;
+                word-spacing: 1px;
             }
             
             .project {
@@ -229,10 +276,13 @@
             
             .project h3 {
                 font-size: 18px;
+                word-spacing: 1px;
             }
             
             .project p {
                 font-size: 14px;
+                word-spacing: 1px;
+                line-height: 1.7;
             }
             
             .navbar a {
@@ -266,22 +316,33 @@
             50% { transform: translateY(-5px); }
         }
         .social-links {
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
+            gap: 20px;
         }
         .social-link {
-            font-size: 24px;
+            font-size: 28px;
             color: #333;
             text-decoration: none;
-            margin: 0 10px;
             transform: scale(1);
-            transition: all 0.2s ease-in-out;
-            padding: 8px;
+            transition: all 0.3s ease-in-out;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(51, 51, 51, 0.2);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
         }
         .social-link:hover {
-            transform: scale(1.2);
-            color: #666;
+            transform: scale(1.1) translateY(-3px);
+            color: #fff;
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         #about-me {
             display: none;
@@ -380,36 +441,67 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.8);
             border-left: 4px solid #333;
-            transition: all 0.3s ease;
-            animation: contactSlideIn 0.6s ease-out;
+            border-radius: 5px;
+            transition: all 0.4s ease;
+            animation: contactSlideIn 0.8s ease-out;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .contact-item::before {
+            content: counter(contact-counter, decimal-leading-zero);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid #ddd;
         }
 
         .contact-item:hover {
-            background: #e9ecef;
-            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
         .contact-item i {
-            font-size: 24px;
-            margin-right: 15px;
+            font-size: 28px;
+            margin-right: 20px;
             color: #333;
+            min-width: 40px;
         }
 
         .contact-item p {
-            font-size: 16px;
+            font-size: 18px;
             margin: 0;
             color: #333;
             font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-section {
+            counter-reset: contact-counter;
+        }
+
+        .contact-item {
+            counter-increment: contact-counter;
         }
 
         @keyframes contactSlideIn {
@@ -438,15 +530,18 @@
 
         
         .project {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             margin: 30px 0;
-            padding: 30px;
+            padding: 35px;
             border-left: 4px solid #333;
             position: relative;
             transition: all 0.4s ease;
             animation: reportCardAppear 0.8s ease-out;
             counter-increment: project-counter;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 51, 51, 0.1);
         }
 
         .project::before {
@@ -480,8 +575,9 @@
         }
 
         .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .project h3 {
@@ -505,7 +601,6 @@
             color: #333;
             text-decoration: none;
             font-weight: bold;
-            border-bottom: 1px solid #333;
             transition: all 0.3s ease;
             display: inline-block;
             margin-top: 10px;
@@ -513,7 +608,6 @@
 
         .project a:hover {
             color: #666;
-            border-bottom-color: #666;
         }
 
         
@@ -525,13 +619,17 @@
         .portfolio-image {
             width: 300px;
             height: 200px;
-            object-fit: cover;
+            object-fit: contain;
             border: 1px solid #ddd;
             margin: 20px;
             transition: all 0.3s ease;
             cursor: pointer;
             max-width: 100%;
             box-sizing: border-box;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background: #f8f9fa;
         }
 
         .portfolio-image:hover {
