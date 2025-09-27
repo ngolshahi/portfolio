@@ -575,8 +575,63 @@
         <p id="about-me-content" style="font-size: 18px; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: justify; word-wrap: break-word; overflow-wrap: break-word;"></p>
         <div class="page-number">PAGE 2</div>
     </div>
-    <div id="portfolio">
-        <h2>Portfolio</h2>
+    <div id="portfolio" class="portfolio">
+        <h2 style="color: #333; font-size: 36px; margin-bottom: 30px; text-align: center;">PORTFOLIO</h2>
+        
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <h2 style="color: #333; font-size: 24px; border-bottom: 1px solid #ddd; padding-bottom: 10px; display: inline-block; text-transform: uppercase; letter-spacing: 2px;">LATEST PROJECTS</h2>
+        </div>
+        <div class="project">
+            <h3>Final Year Project - Hearing Aid Platform</h3>
+            <p>Individual final year project developing a comprehensive Progressive Web Application (PWA) that provides an augmented reality experience for visualizing hearing aids. The platform includes hearing tests, appointment booking, and personalized audiologist consultations. Built with React, TypeScript, and Kotlin backend, featuring iOS Quick Look AR, WebXR support, and Azure cloud services. The application demonstrates advanced full-stack development, AR/VR technologies, and healthcare application design. Complete with offline support, cross-platform compatibility, and professional-grade hearing assessment tools.</p>
+            <p><a href="https://github.com/ngolshahi/hearing-aid-platform" target="_blank" style="color: #333; text-decoration: underline;">🔗 View Project on GitHub</a></p>
+        </div>
+
+        <div class="project">
+            <h3>Causal Reasoning in Large Language Models</h3>
+            <p>Individual research project investigating the limitations of Large Language Models (LLMs) in distinguishing correlation from causation. I reproduced the CORR2CAUSE benchmark using a 4-million-parameter BERT-tiny fine-tuned on 5,000 synthetic examples, achieving 85% accuracy in-distribution. However, accuracy collapsed to near random chance when causal direction was perturbed by a simple back-door variable swap. I introduced lightweight causal rationalisation through training on "because… therefore" explanations, recovering 15 percentage points on the swapped set. This research demonstrates advanced understanding of machine learning, causal inference, and experimental design.</p>
+            <p><a href="Large_Language_Models_and_Causality.pdf" target="_blank" style="color: #333; text-decoration: underline;">📄 Read Full Research Report (PDF)</a></p>
+        </div>
+
+        <div class="project">
+            <h3>Advanced Databases - SJDB Query Optimizer</h3>
+            <p>Individual coursework where I built a query optimizer for SJDB, a simple RDBMS. My optimizer accepts a canonical query plan (a project over a series of selects over a cartesian product over the input named relations) and constructs a left-deep query plan which minimizes the sizes of any intermediate relations. This involved implementing advanced database optimization algorithms, cost estimation techniques, and query plan generation. The project showcased deep understanding of database internals, query optimization theory, and performance engineering.</p>
+        </div>
+
+        <div class="project">
+            <h3>Cloud Application Development - Group Project (Lecture Note Generator)</h3>
+            <p>Group project with 6 other students creating a Software as a Service (SaaS) platform for lecture note generation. Our system could process lectures in various formats (mp3, mp4, etc.) and generate customizable notes with different detail levels and styles. Users could choose between lecture transcription only or enhanced notes using external knowledge. The platform featured real-time transcription, note generation, quiz creation, and sharing capabilities between users. This project demonstrated advanced cloud architecture, AI integration, and collaborative software development skills.</p>
+        </div>
+
+        <div class="project">
+            <h3>Cloud Application Development - Part 1 (Quiplash)</h3>
+            <p>Individual coursework focusing on Azure cloud services and serverless computing. I wrote Azure Functions in Python using the v1 programming model, deployed a FunctionApp on Azure, and performed CRUD operations on documents in Cosmos DB. The project involved querying collections in Cosmos DB and configuring additional cloud services in the context of a FunctionApp. I created a Quiplash-style game backend with real-time functionality, achieving 92% in this coursework. The code demonstrates proficiency in cloud architecture, serverless computing, and NoSQL database management.</p>
+        </div>
+
+        <div class="project">
+            <h3>Cloud Application Development - Part 2 (Frontend)</h3>
+            <p>Individual coursework creating the frontend for the Quiplash application using Vue.js. I developed a responsive web interface that connects to the Azure Functions backend, implementing real-time game functionality, user authentication, and dynamic content updates. The project showcased skills in modern frontend development, API integration, and real-time web applications. I achieved 86% in this coursework, demonstrating strong full-stack development capabilities.</p>
+        </div>
+
+        <div class="project">
+            <h3>Computer Vision Group Coursework - Scene Recognition</h3>
+            <p>Group coursework with 3 other students testing understanding of image formation, image modelling, and computer vision. We analyzed and designed algorithms for image processing and computer vision, developing and evaluating solutions to problems in scene recognition. The project involved implementing various computer vision techniques for scene classification and recognition tasks. Our team achieved 23/25, demonstrating excellent collaborative work and technical implementation skills in computer vision.</p>
+        </div>
+        <img class="portfolio-image" src="images/run1_with.png" alt="Scene Recognition With" onclick="openLightbox('images/run1_with.png', 'Scene Recognition - With Processing')">
+        <img class="portfolio-image" src="images/run1_without.png" alt="Scene Recognition Without" onclick="openLightbox('images/run1_without.png', 'Scene Recognition - Without Processing')">
+
+        <div class="project">
+            <h3>Computer Vision Coursework 1 - Hybrid Images</h3>
+            <p>Individual coursework demonstrating understanding of current approaches to image formation and image modelling, basic image processing and computer vision. I implemented basic image processing algorithms including convolution operations and hybrid image generation. The project involved creating hybrid images by combining low-frequency components of one image with high-frequency components of another, resulting in images that appear different at different viewing distances. I achieved 90% in this coursework, showcasing strong implementation skills in computer vision algorithms.</p>
+        </div>
+        <img class="portfolio-image" src="images/hybridimage.png" alt="Hybrid Image Result" onclick="openLightbox('images/hybridimage.png', 'Hybrid Image - Computer Vision Coursework')">
+
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <h2 style="color: #333; font-size: 24px; border-bottom: 1px solid #ddd; padding-bottom: 10px; display: inline-block; text-transform: uppercase; letter-spacing: 2px;">EARLIER PROJECTS</h2>
+        </div>
+
         <div class="project">
             <h3>TetrECS</h3>
             <p>I have developed a Tetris-inspired game using JavaFX that offers both a classic single-player mode and an engaging multiplayer mode. In the multiplayer mode, I implemented real-time functionality, allowing players to create parties, chat, and compete with friends, adding an exciting social dimension to the game. I also designed and coded interactive gameplay elements, ensuring smooth block movement, rotation, and an effective scoring system to keep players engaged. To enhance the overall user experience, I created a user-friendly interface with responsive game controls, making it easy for players to enjoy the game.</p>
