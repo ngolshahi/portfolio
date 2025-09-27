@@ -666,16 +666,16 @@
                 <i class="fa-regular fa-file"></i>
             </a>
         </div>
-        <div class="page-number" id="page-number">PAGE 1</div>
     </div>
+    <div class="page-number" id="page-number">PAGE 1</div>
     <div id="about-me">
-	<h2 style="color: #333; font-size: 36px; margin-bottom: 30px; text-align: center;">ABOUT ME</h2>
+        <h2 style="color: #333; font-size: 42px; margin-bottom: 40px; text-align: center; text-transform: uppercase; letter-spacing: 3px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); position: relative;">ABOUT ME</h2>
         <button id="skip-animation" style="display: none; background: #f8f9fa; color: #333; border: 2px solid #333; padding: 8px 16px; border-radius: 0; cursor: pointer; margin-bottom: 20px; font-family: 'Courier New', Courier, monospace; font-size: 14px; transition: all 0.3s ease;">Skip Animation</button>
-        <p id="about-me-content" style="font-size: 18px; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: justify; word-wrap: break-word; overflow-wrap: break-word;"></p>
-        <div class="page-number">PAGE 2</div>
+        <p id="about-me-content" style="font-size: 18px; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: justify; word-wrap: break-word; overflow-wrap: break-word; word-spacing: 1px;"></p>
     </div>
+    <div class="page-number" id="page-number-2">PAGE 2</div>
     <div id="portfolio" class="portfolio">
-        <h2 style="color: #333; font-size: 36px; margin-bottom: 30px; text-align: center;">PORTFOLIO</h2>
+        <h2 style="color: #333; font-size: 42px; margin-bottom: 40px; text-align: center; text-transform: uppercase; letter-spacing: 3px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); position: relative;">PORTFOLIO</h2>
         
         
         <div style="text-align: center; margin: 40px 0;">
@@ -780,12 +780,12 @@
     <div id="image-lightbox" class="lightbox" onclick="closeLightbox()">
         <img id="lightbox-image" src="" alt="">
     </div>
-    <div class="page-number">PAGE 3</div>
 </div>    
+    <div class="page-number" id="page-number-3">PAGE 3</div>
 
         
-<div id="contact">
-    <h2 style="color: #333; font-size: 36px; margin-bottom: 30px; text-align: center;">CONTACT</h2>
+<div id="contact" class="contact-section">
+    <h2 style="color: #333; font-size: 42px; margin-bottom: 40px; text-align: center; text-transform: uppercase; letter-spacing: 3px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); position: relative;">CONTACT</h2>
     <div class="contact-info">
         <div class="contact-item">
             <i class="fas fa-phone"></i>
@@ -796,8 +796,8 @@
             <p>Email: golshahi@icloud.com</p>
         </div>
     </div>
-    <div class="page-number">PAGE 4</div>
 </div>
+    <div class="page-number" id="page-number-4">PAGE 4</div>
 
 
     <script>
@@ -863,6 +863,15 @@
 
         skipButton.addEventListener('click', skipAnimation);
 
+        // Function to show/hide page indicators
+        function showPageIndicator(pageNumber) {
+            // Hide all page indicators
+            document.querySelectorAll('.page-number').forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+            // Show the active one
+            document.getElementById(`page-number${pageNumber === 1 ? '' : '-' + pageNumber}`).classList.add('active');
+        }
         
         const homeLink = document.getElementById('home-link');
         const aboutMeLink = document.getElementById('about-me-link');
@@ -885,7 +894,7 @@
             nameElement.innerHTML = ''; 
             occupationElement.innerHTML = ''; 
             typeWriter(); 
-            document.getElementById('page-number').textContent = 'PAGE 1';
+            showPageIndicator(1);
         });
 
         aboutMeLink.addEventListener('click', () => {
@@ -900,7 +909,7 @@
             isTyping = true;
             skipButton.style.display = 'inline-block';
             typeWriterAboutMe(); 
-            document.getElementById('page-number').textContent = 'PAGE 2';
+            showPageIndicator(2);
         });
 
         portfolioLink.addEventListener('click', () => {
@@ -909,7 +918,7 @@
             contactSection.style.display = 'none';
             aboutMeSection.style.display = 'none';
             portfolioSection.style.display = 'block';
-            document.getElementById('page-number').textContent = 'PAGE 3';
+            showPageIndicator(3);
         });
         contactLink.addEventListener('click', () => {
                 homeSection.style.animation = 'none';
@@ -917,12 +926,13 @@
                 aboutMeSection.style.display = 'none';
                 portfolioSection.style.display = 'none';
                 contactSection.style.display = 'block';
-                document.getElementById('page-number').textContent = 'PAGE 4';
+                showPageIndicator(4);
         });
 
         
         window.onload = function () {
             typeWriter(); 
+            showPageIndicator(1);
             setTimeout(() => {
                 const homeElement = document.getElementById('home');
                 homeElement.style.animation = 'glitch 1s linear infinite';
