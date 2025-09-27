@@ -291,12 +291,21 @@
         }
         #portfolio {
             display: none;
-            text-align: center;
-            color: #333;
-            padding: 20px;
-            margin-top: 20px; 
-            overflow: auto;
-            max-height: 70vh; 
+            margin-top: 80px;
+            padding: 40px;
+            margin: 80px 20px 20px 20px;
+            animation: documentSlideIn 0.8s ease-out;
+        }
+
+        @keyframes documentSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) rotateX(15deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
         }
         
         .navbar #download-cv {
