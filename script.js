@@ -35,7 +35,7 @@ function typeWriter() {
         
 const aboutMeElement = document.getElementById('about-me-content');
 const skipButton = document.getElementById('skip-animation');
-let aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills, learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
+let aboutMeText = "Software Engineer with experience in full-stack development, working with Spring Java, Angular TypeScript, and MongoDB in Agile teams. Skilled in delivering features across the product lifecycle, from building bulk document download integrations with SharePoint to implementing server-side sorting and searchable dropdowns. Strong focus on clean, efficient solutions and collaborative delivery.";
 let aboutMeIndex = 0;
 let isTyping = false;
 
@@ -100,7 +100,7 @@ aboutMeLink.addEventListener('click', () => {
     contactSection.style.display = 'none';
     portfolioSection.style.display = 'none';
     aboutMeSection.style.display = 'block';
-    aboutMeText = "Versatile Computer Science student with a strong academic background and a keen interest in technology and finance. Equipped with a solid foundation in computer science, problem-solving abilities, and a thirst for innovation. My analytical thinking, attention to detail, and passion for research make me an asset in dynamic environments. Eager to apply my skills, learn, and contribute meaningfully to organizations seeking expertise in both computer science and finance.";
+    aboutMeText = "Software Engineer with experience in full-stack development, working with Spring Java, Angular TypeScript, and MongoDB in Agile teams. Skilled in delivering features across the product lifecycle, from building bulk document download integrations with SharePoint to implementing server-side sorting and searchable dropdowns. Strong focus on clean, efficient solutions and collaborative delivery.";
     aboutMeIndex = 0;
     aboutMeElement.innerHTML = '';
     isTyping = true;
